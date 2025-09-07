@@ -8,7 +8,7 @@ on:
       - 'JFTD-110-GitHub_Actions_for_JFrog/**'
 permissions:
   actions: read # for detecting the Github Actions environment.
-  id-token: write # for creating OIDC tokens for signing.
+  # id-token: write # for creating OIDC tokens for signing.
   packages: write # for uploading attestations.
   contents: read
   security-events: write # Required for uploading code scanning.
