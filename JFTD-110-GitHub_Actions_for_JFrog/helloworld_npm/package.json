@@ -1,7 +1,7 @@
 {
   "name": "jftd-110-helloworld-npm-example",
-  "description": "helloworld sample project for swampup",
-  "version": "0.0.8",
+  "description": "helloworld sample project for swampup 2025",
+  "version": "0.0.9",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
