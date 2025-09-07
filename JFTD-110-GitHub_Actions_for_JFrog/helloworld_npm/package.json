@@ -1,6 +1,7 @@
 {
   "name": "jftd-110-helloworld-npm-example",
-  "version": "0.0.5",
+  "description": "helloworld sample project"
+  "version": "0.0.6",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
