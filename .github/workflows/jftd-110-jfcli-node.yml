@@ -35,6 +35,11 @@ jobs:
         continue-on-error: true
         uses: actions/checkout@v4
 
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with: 
+          node-version: ${{ env.NODE_VERSION }}
+
       # Start Lab 1.1 - Setup Github OIDC Integration #########################################################
       # TODO: Lab 1.1 - Replace this commented section with the snippet from "Step 1: Create the Github OIDC Integration object in your JFrog Platform instance"
       # 
@@ -139,7 +144,7 @@ jobs:
       - name: "Install npm Dependencies"   
         continue-on-error: false
         run: |
-          jf npm ci --ignore-scripts --module npm-build
+          jf npm ci --ignore-scripts --module npm-build --build-name=${{ env.BUILD_NAME }} --build-number=${{ env.BUILD_ID }} 
           # jf npm install --build-name=${{ env.BUILD_NAME }} --build-number=${{ env.BUILD_ID }} 
      
       # TODO: Lab 2.5 - Step 5 - Publish npm package to Artifactory with BuildInfo
@@ -157,7 +162,7 @@ jobs:
       - name: "Publish npm package"
         continue-on-error: false
         run: |
-          jfrog npm publish --module npm-build
+          jf npm publish --module npm-build --build-name=${{ env.BUILD_NAME }} --build-number=${{ env.BUILD_ID }} 
       
       # TODO: Lab 2.6 - Step 6 - Collect Environment Variables
       # NOTE - Uncomment this step to collect build environment information
