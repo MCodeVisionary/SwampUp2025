@@ -139,7 +139,8 @@ jobs:
       - name: "Install npm Dependencies"   
         continue-on-error: false
         run: |
-          jf npm install --build-name=${{ env.BUILD_NAME }} --build-number=${{ env.BUILD_ID }} 
+          jf npm ci --ignore-scripts --build-name=${{ env.BUILD_NAME }} --build-number=${{ env.BUILD_ID }}
+          # jf npm install --build-name=${{ env.BUILD_NAME }} --build-number=${{ env.BUILD_ID }} 
      
       # TODO: Lab 2.5 - Step 5 - Publish npm package to Artifactory with BuildInfo
       # NOTE - Uncomment this step to publish npm package
