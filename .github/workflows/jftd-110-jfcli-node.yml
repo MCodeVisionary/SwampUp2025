@@ -50,10 +50,8 @@ jobs:
         uses: jfrog/setup-jfrog-cli@v4
         id: setup-cli
         env:
-          JF_URL: ${{vars.ARTIFACTORY_URL}}   # example: http://academy-artifactory.dzmfffgzzkmf.instruqt.io
+          JF_URL: ${{ vars.JF_URL }}
         with:
-          version: latest
-          # oidc-provider-name: jfrog-githuboidc
           oidc-provider-name: MCodeVisionary/SwampUp2025@github
       
       # End Lab 1.1 #########################################################
