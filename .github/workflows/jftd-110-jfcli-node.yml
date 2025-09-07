@@ -76,10 +76,10 @@ jobs:
       # early in the workflow and confirms that the JFrog CLI is properly configured
       # with valid credentials before attempting to use it for npm operations.
       #
-      - name: "Run only if value is present"
-        if: steps.setup-jfrog-cli.outputs.oidc-token != ''
-        run: |
-          echo "Access Token set as output to 'Get Artifactory Access Token and Setup JFrog CLI'"
+      # - name: "Run only if value is present"
+      #   if: steps.setup-jfrog-cli.outputs.oidc-token != ''
+      #   run: |
+      #     echo "Access Token set as output to 'Get Artifactory Access Token and Setup JFrog CLI'"
 
 
       # Start Lab 2 - Generate a Job Summary of Github Actions Workflow #########################################################
