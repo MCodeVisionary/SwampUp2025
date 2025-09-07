@@ -46,13 +46,22 @@ jobs:
       # 5. Copy the "Show Snippet" YAML configuration
       # 6. Replace this commented section with the copied snippet
       #
-      - name: "Get Artifactory Access Token and Setup JFrog CLI"
-        uses: jfrog/setup-jfrog-cli@v4
+      # - name: "Get Artifactory Access Token and Setup JFrog CLI"
+      #   uses: jfrog/setup-jfrog-cli@v4
+      #   id: setup-cli
+      #   env:
+      #     JF_URL: ${{ vars.JF_URL }}
+      #   with:
+      #     oidc-provider-name: jfrog-github-oidc
+
+      - uses: jfrog/setup-jfrog-cli@v4
         id: setup-cli
         env:
-          JF_URL: ${{ vars.JF_URL }}
+          JF_URL: https://soleng.jfrog.io 
         with:
-          oidc-provider-name: jfrog-github-oidc
+          oidc-provider-name: github-oidc-MCodeVisionary 
+          oidc-audience: maharship
+
       
       # End Lab 1.1 #########################################################
 
