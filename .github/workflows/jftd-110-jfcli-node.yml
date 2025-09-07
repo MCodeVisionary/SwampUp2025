@@ -58,8 +58,11 @@ jobs:
           JF_URL: ${{vars.ARTIFACTORY_URL}}   # example: http://academy-artifactory.dzmfffgzzkmf.instruqt.io
         with:
           version: latest
+          JF_URL: ${{ secrets.JF_URL }}
+          JF_PASSWORD: ${{ secrets.JF_PASSWORD }}
+          JF_USER: ${{secrets.JF_USER}}
           # oidc-provider-name: jfrog-githuboidc
-          oidc-provider-name: MCodeVisionary/SwampUp2025@github
+          # oidc-provider-name: MCodeVisionary/SwampUp2025@github
       
       # End Lab 1.1 #########################################################
 
