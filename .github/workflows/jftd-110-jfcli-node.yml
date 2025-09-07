@@ -57,10 +57,9 @@ jobs:
       - uses: jfrog/setup-jfrog-cli@v4
         id: setup-cli
         env:
-          JF_URL: https://soleng.jfrog.io 
-        with:
-          oidc-provider-name: github-oidc-MCodeVisionary 
-          oidc-audience: maharship
+          JF_URL: https://soleng.jfrog.io/
+          JF_USER: maharship
+          JF_PASSWORD: ${{ vars.JF_PASSWORD }}
 
       
       # End Lab 1.1 #########################################################
